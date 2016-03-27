@@ -7,4 +7,10 @@ This builds a jar file and then permits us to launch the basic service, accessib
 
 ## Available commands
     curl localhost:8080/health
-    curl localhost:8080/dice/roll
+    curl localhost:8080/dice/green/roll
+    curl localhost:8080/dice/yellow/roll
+    curl localhost:8080/dice/brown/roll
+    curl localhost:8080/dice/red/roll
+    curl localhost:8080/dice/blue/roll
+    curl localhost:8080/dice/grey/roll
+    curl localhost:8080/dice/black/roll
