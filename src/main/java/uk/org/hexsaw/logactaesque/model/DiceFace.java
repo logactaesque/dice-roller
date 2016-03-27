@@ -1,4 +1,4 @@
-package uk.org.hexsaw.logactaeasque.uk.org.hexsaw.logactaesque.model;
+package uk.org.hexsaw.logactaesque.model;
 
 
 public class DiceFace {
