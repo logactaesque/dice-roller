@@ -53,7 +53,7 @@ public class DiceControllerTest {
     }
 
     @Test
-    public void rollingYellowDiceGivesZeroOneOrTwo() throws Exception {
+    public void rollingYellowDiceReturnsValidNumbers() throws Exception {
 
         ResultActions result = this.mockMvc.perform(get("/dice/yellow/roll"))
                 .andExpect(status().isOk())
@@ -62,13 +62,127 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2)));
+    }
+
+    @Test
+    public void canRollTheGreenDice() throws Exception {
+        this.mockMvc.perform(get("/dice/green/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
+
+    @Test
+    public void rollingGreenDiceReturnsValidNumbers() throws Exception {
+
+        ResultActions result = this.mockMvc.perform(get("/dice/green/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3), is(4), is(5)));
+    }
+
+    @Test
+    public void canRollTheBrownDice() throws Exception {
+        this.mockMvc.perform(get("/dice/brown/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
+
+    @Test
+    public void rollingBrownDiceReturnsValidNumbers() throws Exception {
+
+        ResultActions result = this.mockMvc.perform(get("/dice/brown/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(4), is(5)));
+    }
 
 
+    @Test
+    public void canRollTheBlueDice() throws Exception {
+        this.mockMvc.perform(get("/dice/blue/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
 
+    @Test
+    public void rollingBlueDiceReturnValidNumbers() throws Exception {
 
+        ResultActions result = this.mockMvc.perform(get("/dice/blue/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
 
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3), is(4)));
+    }
 
+    @Test
+    public void canRollTheGreyDice() throws Exception {
+        this.mockMvc.perform(get("/dice/grey/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
 
+    @Test
+    public void rollingGreyDiceReturnsValidNumbers() throws Exception {
+
+        ResultActions result = this.mockMvc.perform(get("/dice/grey/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3)));
+    }
+
+    @Test
+    public void canRollTheRedDice() throws Exception {
+        this.mockMvc.perform(get("/dice/red/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
+
+    @Test
+    public void rollingRedDiceReturnsValidNumbers() throws Exception {
+
+        ResultActions result = this.mockMvc.perform(get("/dice/red/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3)));
+    }
+
+    @Test
+    public void canRollTheBlackDice() throws Exception {
+        this.mockMvc.perform(get("/dice/black/roll"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+    }
+
+    @Test
+    public void rollingBlackDiceReturnsValidNumbers() throws Exception {
+
+        ResultActions result = this.mockMvc.perform(get("/dice/black/roll"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
+
+        String content =  result.andReturn().getResponse().getContentAsString();
+        Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
+        assertThat(rolledNumber, anyOf(is(0),  is(2), is(3)));
     }
 
 }

@@ -66,4 +66,6 @@ public class DiceController {
     public @ResponseBody DiceFace blackDiceRoll() {
         return new DiceFace(blackDice.roll());
     }
+
+
 }
