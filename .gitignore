@@ -1,7 +1,9 @@
-
+# Java #
 *.class
 /target
 
+# Mac OSX #
+**/.DS_Store
 
 # Package Files #
 *.jar
