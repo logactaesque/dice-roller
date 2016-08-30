@@ -12,9 +12,11 @@ All seven dice are available as per the original rules of the game:
 |Black | 0, 0, 2, 2, 2, 3 |
 |Blue  | 0, 1, 1, 2, 3, 4 |
 
+To build and run the service via [Maven](https://maven.apache.org/):
+
     mvn clean package && java -jar target/logactaesque-dice-1.0-SNAPSHOT.jar &
 
-This builds a jar file and then permits us to launch the basic service, accessible on port 8080.
+This builds a jar file and then launches the basic service, by default accessible on port 8080.
 
 ## Sample dice-rolling commands using curl
 A series of GET endpoints are provided, each representing the roll of a specific Logacta dice:
@@ -28,7 +30,7 @@ A series of GET endpoints are provided, each representing the roll of a specific
     curl localhost:8080/dice/black/roll
 
 ## Actuator-based commands using curl
-Because the implementation relies upon [Spring Boot Actuator] (https://github.com/spring-projects/spring-boot/tree/master/spring-boot-actuator),
+Because the implementation relies upon [Spring Boot Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-actuator),
 a number of production endpoints are available that allow state of the service to be inspected:
 
     curl localhost:8080/health
