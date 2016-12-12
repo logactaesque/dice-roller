@@ -12,6 +12,4 @@ script:
   - mvn clean test package docker:build
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
-      docker push hexsaw/logactaesque-dice:latest
-    fi
+  - docker push hexsaw/logactaesque-dice:latest
