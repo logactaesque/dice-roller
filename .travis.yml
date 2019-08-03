@@ -8,7 +8,7 @@ services:
   - docker
 
 script: 
-  - mvn clean test package docker:build
+  - mvn clean test package
 
 # after_success:
 #  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
