@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import uk.org.hexsaw.logactaesque.model.DiceFace;
+import uk.org.hexsaw.logactaesque.model.DiceRoll;
 import uk.org.hexsaw.logactaesque.model.Rollable;
 
 @Controller
@@ -33,39 +34,38 @@ public class DiceController {
     private Rollable blackDice;
 
     @RequestMapping(path = "/dice/yellow/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace yellowDiceRoll() {
-        return new DiceFace(yellowDice.roll());
+    public @ResponseBody DiceRoll yellowDiceRoll() {
+        return DiceRoll.invoke("Yellow", yellowDice.roll());
     }
 
     @RequestMapping(path = "/dice/green/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace greenDiceRoll() {
-        return new DiceFace(greenDice.roll());
+    public @ResponseBody DiceRoll greenDiceRoll() {
+        return DiceRoll.invoke("Green", greenDice.roll());
     }
 
     @RequestMapping(path = "/dice/brown/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace brownDiceRoll() {
-        return new DiceFace(brownDice.roll());
+    public @ResponseBody DiceRoll brownDiceRoll() {
+        return DiceRoll.invoke("Brown", brownDice.roll());
     }
 
     @RequestMapping(path = "/dice/blue/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace blueDiceRoll() {
-        return new DiceFace(blueDice.roll());
+    public @ResponseBody DiceRoll blueDiceRoll() {
+        return DiceRoll.invoke("Blue", blueDice.roll());
     }
 
     @RequestMapping(path = "/dice/grey/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace greyDiceRoll() {
-        return new DiceFace(greyDice.roll());
+    public @ResponseBody DiceRoll greyDiceRoll() {
+        return DiceRoll.invoke("Grey", greyDice.roll());
     }
 
     @RequestMapping(path = "/dice/red/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace redDiceRoll() {
-        return new DiceFace(redDice.roll());
+    public @ResponseBody DiceRoll redDiceRoll() {
+        return DiceRoll.invoke("Red", redDice.roll());
     }
 
     @RequestMapping(path = "/dice/black/roll", method = RequestMethod.GET)
-    public @ResponseBody DiceFace blackDiceRoll() {
-        return new DiceFace(blackDice.roll());
+    public @ResponseBody DiceRoll blackDiceRoll() {
+        return DiceRoll.invoke("Black", blackDice.roll());
     }
-
 
 }

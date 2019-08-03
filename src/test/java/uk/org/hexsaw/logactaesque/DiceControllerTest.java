@@ -15,8 +15,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import static org.hamcrest.CoreMatchers.anyOf;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -59,9 +58,13 @@ public class DiceControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
 
-        String content =  result.andReturn().getResponse().getContentAsString();
+        String content = result.andReturn().getResponse().getContentAsString();
+
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Yellow"));
     }
 
     @Test
@@ -82,6 +85,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3), is(4), is(5)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Green"));
     }
 
     @Test
@@ -102,6 +108,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(4), is(5)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Brown"));
     }
 
 
@@ -123,6 +132,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3), is(4)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Blue"));
     }
 
     @Test
@@ -143,6 +155,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Grey"));
     }
 
     @Test
@@ -163,6 +178,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0), is(1), is(2), is(3)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Red"));
     }
 
     @Test
@@ -183,6 +201,9 @@ public class DiceControllerTest {
         String content =  result.andReturn().getResponse().getContentAsString();
         Integer rolledNumber = JsonPath.read(content, "$.rolledNumber");
         assertThat(rolledNumber, anyOf(is(0),  is(2), is(3)));
+
+        String diceColour = JsonPath.read(content, "$.diceColour");
+        assertThat(diceColour, equalTo("Black"));
     }
 
 }
