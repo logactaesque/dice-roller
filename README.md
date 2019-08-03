@@ -1,5 +1,5 @@
 # Logactaesque Dice
-A RESTful web service that mimics the rolling of Logacta dice when determining the outcome of a football game.
+A RESTful web service built using [Spring Boot](https://spring.io/projects/spring-boot) that mimics the rolling of Logacta dice when determining the outcome of a football game.
 All seven dice are available as per the original rules of the game:
 
 | Dice | Available Faces  |
@@ -29,10 +29,7 @@ A series of GET endpoints are provided, each representing the roll of a specific
     curl localhost:8080/dice/black/roll
 
 ## Actuator-based commands using curl
-Because the implementation relies upon [Spring Boot Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-actuator),
-a number of production endpoints are available that allow state of the service to be inspected:
+Because the implementation relies upon the [Spring Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-actuator), the health endpoint has 
+been made visible to allow you to determine if the service is active and reachable.
 
-    curl localhost:8080/health
-    curl localhost:8080/metrics
-    curl localhost:8080/dump
-    curl localhost:8080/info
+    curl localhost:8080/actuator/health
