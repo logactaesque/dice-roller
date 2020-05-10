@@ -3,22 +3,22 @@ A RESTful web service built using [Spring Boot](https://spring.io/projects/sprin
 All seven dice are available as per the original rules of the game:
 
 | Dice | Available Faces  |
-|------|------------------|
-|Green | 0, 1, 2, 3, 4, 5 |
-|Red   | 0, 1, 1, 2, 2, 3 |
-|Yello | 0, 0, 1, 1, 1, 2 |
-|Brown | 0, 1, 1, 2, 4, 5 |
-|Grey  | 0, 0, 1, 1, 2, 3 |
-|Black | 0, 0, 2, 2, 2, 3 |
-|Blue  | 0, 1, 1, 2, 3, 4 |
+|-------|------------------|
+|Green  | 0, 1, 2, 3, 4, 5 |
+|Red    | 0, 1, 1, 2, 2, 3 |
+|Yellow | 0, 0, 1, 1, 1, 2 |
+|Brown  | 0, 1, 1, 2, 4, 5 |
+|Grey   | 0, 0, 1, 1, 2, 3 |
+|Black  | 0, 0, 2, 2, 2, 3 |
+|Blue   | 0, 1, 1, 2, 3, 4 |
 
 To build and run the service locally via [Maven](https://maven.apache.org/):
 
-    mvn clean package && java -jar target/dice-roller-1.0-SNAPSHOT.jar &
+    mvn clean package && java -jar target/dice-roller-1.0.0-SNAPSHOT.jar &
 
 This builds a jar file and then launches the basic service, by default accessible on port 8080.
 ## Sample dice-rolling commands using curl
-A series of GET endpoints are provided, each representing the roll of a specific Logacta dice:
+A series of GET endpoints is included, each representing the roll of a specific Logacta dice:
 
     curl localhost:8080/dice/green/roll
     curl localhost:8080/dice/yellow/roll
