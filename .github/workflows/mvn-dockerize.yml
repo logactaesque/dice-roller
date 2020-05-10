@@ -19,6 +19,6 @@ jobs:
         java-version: 11.0.4
     - name: Build with Maven
       run: mvn test
-    - name Dockerize
+    - name: Dockerize
       run: docker build . --file Dockerfile --tag dice-roller:$(date +%s)
 
