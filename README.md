@@ -1,6 +1,6 @@
 # Logactaesque Dice
 
-![Java CI with Maven](https://github.com/logactaesque/dice-roller/workflows/Java%20CI%20with%20Maven/badge.svg)
+![Java CI with Maven and Docker](https://github.com/logactaesque/dice-roller/workflows/Java%20CI%20with%20Maven%20and%20Docker/badge.svg?branch=master&event=push)
 
 A RESTful web service built using [Spring Boot](https://spring.io/projects/spring-boot) that mimics the rolling of Logacta dice when determining the outcome of a football game.
 All seven dice are available as per the original rules of the game:
