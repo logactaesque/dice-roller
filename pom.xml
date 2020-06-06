@@ -11,8 +11,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.9.RELEASE</version>
+        <version>2.3.0.RELEASE</version>
     </parent>
+
+    <properties>
+        <!-- Controls spring boot java version -->
+        <java.version>11</java.version>
+    </properties>
 
     <profiles>
         <!-- The Configuration of the development profile -->
@@ -72,9 +77,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
-
+   
     <build>
         <plugins>
             <plugin>
