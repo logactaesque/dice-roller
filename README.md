@@ -17,7 +17,7 @@ All seven dice are available as per the original rules of the game:
 
 To build and run the service locally via [Maven](https://maven.apache.org/):
 
-    mvn clean package && java -jar target/dice-roller-1.0.0-SNAPSHOT.jar &
+    mvn spring-boot:run &
 
 This builds a jar file and then launches the basic service, by default accessible on port 8080.
 ## Sample dice-rolling commands using curl
