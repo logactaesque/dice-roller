@@ -1,0 +1,8 @@
+# management.endpoints.health.enabled=true
+
+server:
+  port: 9001
+  tomcat:
+    accept-count: 100
+    connection-timeout: 3000
+    max-connections: 8192
