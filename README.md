@@ -1,8 +1,9 @@
-# Logactaesque Dice
+# Logactaesque Dice Roller
 
-![Java CI with Maven and Docker](https://github.com/logactaesque/dice-roller/workflows/Java%20CI%20with%20Maven%20and%20Docker/badge.svg?branch=master&event=push)
+![CI Pipeline via Github Actions](https://github.com/github/actions/workflows/ci-pipeline.yml/badge.svg)
 
-A RESTful web service built using [Spring Boot](https://spring.io/projects/spring-boot) that mimics the rolling of Logacta dice when determining the outcome of a football game.
+A RESTful service built using [Spring Boot](https://spring.io/projects/spring-boot) that mimics the rolling of Logacta dice when determining the outcome of a football game.
+
 All seven dice are available as per the original rules of the game:
 
 | Dice  | Available Faces  |
@@ -20,8 +21,9 @@ To build and run the service locally via [Maven](https://maven.apache.org/):
     mvn spring-boot:run &
 
 This builds a jar file and then launches the basic service, by default accessible on port 9001.
-## Sample dice-rolling commands using curl
-A series of GET endpoints is included, each representing the roll of a specific Logacta dice:
+
+## Sample dice-rolling commands using `curl`
+A series of GET endpoints are included, each representing the roll of a specific Logacta dice:
 
     curl localhost:9001/dice/green/roll
     curl localhost:9001/dice/yellow/roll
@@ -32,7 +34,6 @@ A series of GET endpoints is included, each representing the roll of a specific 
     curl localhost:9001/dice/black/roll
 
 ## Actuator-based commands using curl
-Because the implementation relies upon the [Spring Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-actuator), the health endpoint has 
-been made visible to allow you to determine if the service is active and reachable.
+Because the implementation relies upon the [Spring Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-actuator), the health endpoint has been made visible to allow you to determine if the service is active and reachable.
 
     curl localhost:9001/actuator/health
