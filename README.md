@@ -1,6 +1,6 @@
 # Logactaesque Dice Roller
 
-![CI Pipeline via Github Actions](https://github.com/github/actions/workflows/ci-pipeline.yml/badge.svg)
+[![CI Pipeline](https://github.com/logactaesque/dice-roller/actions/workflows/ci-pipeline.yml/badge.svg)](https://github.com/logactaesque/dice-roller/actions/workflows/ci-pipeline.yml)
 
 A RESTful service built using [Spring Boot](https://spring.io/projects/spring-boot) that mimics the rolling of Logacta dice when determining the outcome of a football game.
 
