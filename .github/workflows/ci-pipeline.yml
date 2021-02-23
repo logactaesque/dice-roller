@@ -15,5 +15,7 @@ jobs:
           java-version: 11.0.7
           java-package: jdk
           architecture: x64
-      - name: Maven Build 
+      - name: Maven build 
         run: mvn verify
+      - name: Build docker image
+        run: docker build -t dice-roller .
