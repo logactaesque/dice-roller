@@ -37,3 +37,12 @@ A series of GET endpoints are included, each representing the roll of a specific
 Because the implementation relies upon the [Spring Actuator](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-actuator), the health endpoint has been made visible to allow you to determine if the service is active and reachable.
 
     curl localhost:9001/actuator/health
+
+## Docker
+A Dockerfile has been created and run locally: 
+
+    docker build -t dice-roller .
+
+    docker run -d -p 9001:9001 dice-roller
+
+A corresponding Github Actions workflow currently exists which responds to Github push of changes, building a Docker image which is persisted within the [hexsaw/logactaesque-dice-roller Docker hub](https://hub.docker.com/repository/docker/hexsaw/logactaesque-dice-roller) repository
