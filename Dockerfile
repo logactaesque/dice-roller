@@ -1,5 +1,6 @@
 # Start with a base image containing Java runtime
-FROM adoptopenjdk/openjdk11:alpine-slim
+# FROM adoptopenjdk/openjdk11:alpine-slim
+FROM openjdk:17-alpine
 
 COPY ./target/dice-roller-1.0.0-SNAPSHOT.jar /usr/app/
 
