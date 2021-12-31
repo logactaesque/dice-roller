@@ -33,7 +33,7 @@ jobs:
 
       - name: Build tag and push image to Amazon ECR
         env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REGISTRY: logactaesque-ecr-repo
           ECR_REPOSITORY: dice-roller
           IMAGE_TAG: latest
         run: |
