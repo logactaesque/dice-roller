@@ -39,10 +39,10 @@ Because the implementation relies upon the [Spring Actuator](https://github.com/
     curl localhost:9001/actuator/health
 
 ## Docker
-A Dockerfile has been created and run locally: 
+A Dockerfile has been created and can be run locally: 
 
     docker build -t dice-roller .
 
     docker run -d -p 9001:9001 dice-roller
 
-A corresponding Github Actions workflow currently exists which responds to Github push of changes, building a Docker image which is persisted within the [hexsaw/logactaesque-dice-roller Docker hub](https://hub.docker.com/repository/docker/hexsaw/logactaesque-dice-roller) repository
+A Github actions file packages the image and stores it within an ECR repository. 
